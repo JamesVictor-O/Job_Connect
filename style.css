@@ -61,6 +61,7 @@ body{
 
 /* job list board */
 #seekersDashbord{
+    display: none;
     position: absolute;
     width: 100%;
 }
@@ -170,21 +171,64 @@ body{
 .Btn{
     border-radius: 10px;
     display: flex;
-    justify-content: center;
-    background: rgb(124, 173, 236);
-    padding: 5px;
+    justify-content: space-between;
     margin-top: 10px;
 }
+.Btn p{
+  display: none;
+}
 .Btn button{
-    background: transparent;
+    margin: auto;
+    width: 90%;
+    padding: 5px;
+    background: #9fbffD;
+    border-radius: 10px;
     border: none;
+    color: black;
+    margin-bottom: 5px;
+}
+.Btn button:hover{
+    background: #07063D;
     color: white;
 }
-.Btn:hover{
-    background: rgb(71, 146, 245);
-}
+
 .searchBored{
     display: none;
+}
+
+/* job proposals */
+#proposal{
+    position: absolute;
+    width: 100%;
+}
+.proposalHeader{
+    border-bottom: 1px solid black;
+    display: flex;
+    flex-direction: column;
+}
+#proposal h2{
+    font-size: 1.4rem;
+    margin-left: 15px;
+}
+.proposalNavigation ul{
+    position: relative;
+    height: 70px;
+    width: 70%;
+    display:  flex;
+    flex-direction: row; 
+    justify-content: space-between;
+    padding: 2px;
+    margin-left: 15px;
+}
+.proposalHeader ul li{
+    list-style: none;
+    margin-right: 10px;
+    border: 1px solid black;
+}
+.proposalHeader ul a{
+    text-decoration: none;
+    color: black;
+
 }
 @media(min-width:500px){
    .navigation{
@@ -363,4 +407,16 @@ body{
        .arrows p{
         display: block;
        }
+       .Btn p{
+        display: flex;
+        }
+        .Btn button{
+            width: 30%;
+            margin: 2px;
+            padding: 0px;
+            width: 10%;
+        }
+        .sBtn2{
+            background: orange;
+        }
 }
