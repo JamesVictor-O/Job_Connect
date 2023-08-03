@@ -59,6 +59,133 @@ body{
     background: orange;
 }
 
+/* job list board */
+#seekersDashbord{
+    position: absolute;
+    width: 100%;
+}
+.headSection{
+    border-bottom: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-bottom: 20px;
+}
+.head{
+    width: 100%;
+}
+.head h2{
+    font-size: 1.5rem;
+}
+.filters{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   margin-right: 10px;
+
+}
+.filters input{
+    height: 30px;
+    padding: 0px 8px;
+    outline: none;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: .8px solid black;
+}
+.btn2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border-radius: 10px;
+    margin-right: 10px;
+    border: 1px solid black;
+}
+.btn2:hover{
+    background: #9fbffD;
+}
+.btn2 button{
+    background: transparent;
+    font-size: 1rem;
+    border: none;
+}
+.serchBtn2{
+    display: none;
+}
+
+.jobNumber{
+    display: flex;
+    margin: 10px 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+.arrows{
+    border: 1px solid black;
+    padding: 3px;
+    border-radius: 10px;
+}
+.arrows p{
+    display: none;
+}
+.jobAvailable{ 
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+.jobs{
+    background: rgb(220, 233, 238);
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+}
+.jobTitle{
+    display: flex;
+    justify-content: space-between;
+    align-content: flex-end;
+    align-items: center;
+}
+.payment{
+    width: 85%;
+    font-size: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.payment div{
+    font-weight: bold;
+    font-size: 17px;
+}
+.jobDiscription{
+    display: flex;
+    font-size: 15px;
+    justify-content: space-between;
+}
+.jobDiscription div{
+    background-color: white;
+    padding: 5px;
+    border-radius: 10px;
+}
+.Btn{
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    background: rgb(124, 173, 236);
+    padding: 5px;
+    margin-top: 10px;
+}
+.Btn button{
+    background: transparent;
+    border: none;
+    color: white;
+}
+.Btn:hover{
+    background: rgb(71, 146, 245);
+}
+.searchBored{
+    display: none;
+}
 @media(min-width:500px){
    .navigation{
     display: flex;
@@ -139,4 +266,101 @@ body{
         border: none;
         background: orange;
     }
+    /* job listing */
+    .headSection{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+    }
+    .head{
+        width: 70%;
+    }
+    .filters{
+        flex-direction: row;
+    }
+    .serchBtn2{
+        display: flex;
+    }
+    .filters input{
+        width: 48%;
+    }
+    .btn2{
+        border: none;
+        align-items: end;
+        margin-right: 70px;
+        margin-bottom: 7px;
+        justify-content: space-between;
+        width: 12%;
+    }
+    .btn2 button{
+        border: 1px solid black;
+        padding: 5px 15px;
+        border-radius: 10px;
+    }
+    .btn2:hover{
+        background: none;
+    }
+    .jobBorad{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+       }
+       .allJobs{
+        width: 70%;
+       }
+       .jobs{
+        width: 100%;
+        margin-left: 10px;
+        border-radius: 20px;
+        height: 200px;
+        margin-bottom: 10px;
+       }
+       .payment{
+        width: 30%;
+       }
+       .jobDiscription{
+        width: 40%;
+       }
+       .searchBored{
+          display: flex;
+          background: rgb(189, 227, 245);
+          height: 300px;
+          margin-right: 30px;
+          width: 20%;
+          flex-direction: column;
+          padding-left: 20px;
+          padding-right: 20px;
+          border-radius: 20px;
+       }
+       .searches{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 10px;
+       }
+       .topSearchBtn{
+        display: flex;
+        justify-content: center;
+       }
+       .topSearchBtn button{
+        background: white;
+        padding: 8px;
+        border: none;
+        border-radius: 10px;
+        margin-top: 20px;
+       }
+       .topSearchBtn button:hover{
+        background: rgb(240, 79, 79);
+        color: white;
+       }
+       .arrows{
+        position: relative;
+        display: flex;
+        align-items: center;
+        right: 30%;
+       }
+       .arrows p{
+        display: block;
+       }
 }
