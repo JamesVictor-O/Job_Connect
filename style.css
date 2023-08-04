@@ -205,15 +205,16 @@ body{
     border-bottom: 1px solid black;
     display: flex;
     flex-direction: column;
+    padding-bottom: 20px;
 }
 #proposal h2{
     font-size: 1.4rem;
     margin-left: 15px;
 }
 .proposalNavigation ul{
-    position: relative;
-    height: 70px;
+    position: absolute;
     width: 70%;
+    top: 12%;
     display:  flex;
     flex-direction: row; 
     justify-content: space-between;
@@ -223,12 +224,34 @@ body{
 .proposalHeader ul li{
     list-style: none;
     margin-right: 10px;
-    border: 1px solid black;
+    padding: 4px;
+}
+.proposalHeader ul li:hover{
+    border-bottom: 3px solid #07063D;
 }
 .proposalHeader ul a{
     text-decoration: none;
     color: black;
 
+}
+/* recived */
+.received{
+    display: none;
+    flex-direction: column;
+}
+.recivedJobs{
+    background: rgb(220, 233, 238);
+    padding: 5px 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+}
+.appliedJobs{
+    background: rgb(220, 233, 238);
+    padding: 5px 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
 }
 @media(min-width:500px){
    .navigation{
