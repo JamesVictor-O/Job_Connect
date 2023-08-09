@@ -272,6 +272,36 @@ body{
     justify-content: space-between;
     align-items: center;
 }
+/* mobile humbuger */
+.humbuger{
+    display: block;
+    width: 35px;
+    cursor: pointer;
+
+    appearance: none;
+    background-color: none;
+    outline: none ;
+};
+.bar{
+    position: relative;
+}
+.humbuger .bar, .humbuger::after, .humbuger::before{
+    content: "";
+    display: block;
+    width: 80%;
+    height: 4px;
+    margin: 4px 0px;
+    background: white;
+}
+.humbuger.is-active::before{
+    transform: rotate(-45deg) translate(-1px,6px);
+}
+.humbuger.is-active::after{
+    transform: rotate(45deg) translate(-5px,-9px);
+}
+.humbuger.humbuger.is-active .bar{
+    opacity: 0;
+}
 @media(min-width:500px){
    .navigation{
     display: flex;
@@ -323,7 +353,7 @@ body{
         background: white;
         color: black;
     }
-    .humbuger{
+    .mobileHumbuger{
         display: none;
     }
     /* homepage */
@@ -461,6 +491,9 @@ body{
         .sBtn2{
             background: orange;
         }
+        /* humbuger */
+        
+        
 
         /* jobGivers */
 
