@@ -7,6 +7,7 @@ function OpenCloseHumbuger(humbuger) {
         openCloseNavbar(humbugerEl,mobileMenuEl)
     })
 }
+
 function openCloseNavbar(humbuger, navMenu) {
     if (humbuger.classList.contains("is-active")) {
         navMenu.classList.add("la-active")
