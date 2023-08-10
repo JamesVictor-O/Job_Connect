@@ -32,8 +32,9 @@ body{
     display: none;
 }
 .homepage{
-    display: none;
+    display: flex;
     position: absolute;
+    
     height: 100vh;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)),url("assets/happy-young.png");;
     background-position: center;
@@ -256,6 +257,9 @@ body{
 }
 
 /* jobGiver DashBoard */
+.jobGiversBoard{
+    display: none;
+}
 .jobGiversBoard .buttons{
     width: 100%;
     display: flex;
@@ -311,6 +315,7 @@ body{
     width: 100%;
     height: 109vh;
     left: 100%;
+    z-index: 90;
     transition: .3s ease-out;
 } 
 .mobilemenu ul{
@@ -334,12 +339,16 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 10px;
+}
+.mobileBtn li:hover{
+    background: red;
 }
 .mobileBtn li{
     list-style: none;
     padding: 8px 50px;
     border-radius: 10px;
-    background-color: red;
+    background-color: rgb(248, 97, 97);
     margin-left: 33px;
 }
 .mobileBtn li a{
@@ -350,7 +359,59 @@ body{
 .la-active{
     left: .7%;
 }
+/* sign up Page */
+#signUpPage{
+    display: none;
+    flex-direction: column;
+    margin-left: 10px;
+}
+#signUpPage h2{
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: rgb(43, 35, 35);
 
+}
+#signUpPage p{
+    margin: auto;
+    margin-bottom: 10px;
+}
+#signup2{
+    margin: auto;
+    margin-bottom: 10px;
+}
+#signup2 button{
+    color: white;
+    background: red;
+    padding: 10px 20px;
+    outline: none;
+    border: none;
+    border-radius: 7px;
+}
+.inputField div{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin-left: 10px;
+}
+.inputField div input{
+    height: 20px;
+    padding: 5px;
+    outline: none;
+    border: 1px solid black;
+    margin-top: 6px;
+    margin-bottom: 10px;
+    border-radius: 7px;
+}
+.inputField select{
+    height: 40px;
+    padding: 5px;
+    outline: none;
+    border: 1px solid black;
+    margin-top: 6px;
+    margin-bottom: 10px;
+    border-radius: 7px;
+}
 @media(min-width:500px){
    .navigation{
     display: flex;
@@ -407,7 +468,7 @@ body{
     }
     /* homepage */
     .homepage{
-        display: none;
+        display: flex;
         background: white;
         color: #07063D;
         padding-left: 30px;
@@ -545,7 +606,9 @@ body{
         
 
         /* jobGivers */
-
+        .jobGiversBoard{
+            display: none;
+        }
         .jobGiversBoard .buttons{
             width: 30%;
             flex-direction: row;
@@ -563,5 +626,19 @@ body{
         }
         .mobilemenu{
             display: none;
+        }
+
+        /* signup page */
+        #signUpPage{
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+        }
+        .inputField div{
+            display: flex;
+            flex-direction: column;
+            width: 30%;
+            margin: auto;
         }
 }
