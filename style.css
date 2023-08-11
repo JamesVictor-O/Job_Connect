@@ -59,7 +59,17 @@ body{
     border: none;
     background: orange;
 }
-
+.ownAccount{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ownAccount a{
+    color: orange;
+    font-size: 1rem;
+    margin-left: 6px;
+    text-decoration: none;  
+}
 /* job list board */
 #seekersDashbord{
     display: none;
@@ -490,6 +500,9 @@ body{
     }
     .banner{
         display:flex;
+    }
+    .ownAccount{
+        display: none;
     }
     .homepage button{
         margin-left: 0%;
