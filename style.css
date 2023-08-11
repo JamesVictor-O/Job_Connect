@@ -412,12 +412,12 @@ body{
     margin-bottom: 10px;
     border-radius: 7px;
 }
-.success{
-    border: 1px solid green;
+.inputField div .success{
+    border: 2px solid green;
     color: green;
 }
-.error{
-    border: 2px solid red;
+.inputField div .error{
+    border: 1px solid red;
     color: red;
 }
 @media(min-width:500px){
