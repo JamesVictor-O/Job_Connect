@@ -1,5 +1,11 @@
 let humbugerEl = document.querySelector(".humbuger");
 let mobileMenuEl = document.querySelector(".mobilemenu");
+let signUpButtonEl = document.querySelector("#signup")
+
+
+
+// imported modules
+import { signUp,add } from "./signUp.js";
 
 function OpenCloseHumbuger(humbuger) {
     humbuger.addEventListener("click", () => {
@@ -16,3 +22,6 @@ function openCloseNavbar(humbuger, navMenu) {
     }    
 }
 OpenCloseHumbuger(humbugerEl)
+signUp(signUpButtonEl)
+let value = 5;
+add(value)
