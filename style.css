@@ -433,7 +433,25 @@ body{
 
 /* login */
 #loginPage{
-      
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;   
+}
+.loginInputField div{
+    display: flex;
+    flex-direction: column;
+    width: 100%;  
+}
+.loginInputField div input{
+    width: 120%;
+    height: 20px;
+    padding: 5px;
+    outline: none;
+    border: 1px solid black;
+    margin-top: 6px;
+    margin-bottom: 10px;
+    border-radius: 7px;
 }
 @media(min-width:500px){
    .navigation{
