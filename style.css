@@ -32,7 +32,7 @@ body{
     display: none;
 }
 .homepage{
-    display: flex;
+    display: none;
     position: absolute;
     
     height: 100vh;
@@ -429,6 +429,11 @@ body{
 .inputField div .error{
     border: 1px solid red;
     color: red;
+}
+
+/* login */
+#loginPage{
+      
 }
 @media(min-width:500px){
    .navigation{
