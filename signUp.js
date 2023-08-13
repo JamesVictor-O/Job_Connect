@@ -1,12 +1,17 @@
 const signUpPagePg = document.querySelector("#signUpPage");
 const homePagePg = document.querySelector(".homepage");
+const logInPg = document.querySelector("#loginPage");
 
 // sign up and login page
 
-function signUp(button) {
-    button.addEventListener("click", () => {
-        signUpPagePg.style.display = "flex"
-        homePagePg.style.display="none"
+function signUpForm(button) {
+    let arrayOfLogin = Array.from(button)
+    arrayOfLogin.map(buttons => {
+        buttons.addEventListener("click", () => {
+            signUpPagePg.style.display="flex"
+            logInPg.style.display = "none"
+            homePagePg.style.display="none"
+        })
     })
 }
 // signUp(signUpButtonEl)
@@ -79,9 +84,19 @@ function confirmation() {
     }
     
 }
-
-function add(valu) {
-    console.log(valu + valu)
+function formNavigation(button) {
+    button.addEventListener("click", () => { 
+        logInPg.style.display = "flex"
+        homePagePg.style.display = "none"
+        signUpPagePg.style.display="none"
+    })
+}
+function LoginForm(button) {
+    let arrayOfLogin = Array.from(button)
+    arrayOfLogin.map(buttons => {
+       formNavigation(buttons)
+    })
 }
 
-export {signUp, add}
+
+export {signUpForm,LoginForm}
