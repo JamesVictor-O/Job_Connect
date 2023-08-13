@@ -1,12 +1,14 @@
 
 body{
    width: 100%;
-   height: 109vh;
+   height: 100vh;
    font-family: sans-serif;
    margin: 3px;
    padding: 0;
+   overflow: auto;
 }
 .header{
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -32,9 +34,7 @@ body{
     display: none;
 }
 .homepage{
-    display: none;
-    position: absolute;
-    
+    display: flex;
     height: 100vh;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)),url("assets/happy-young.png");;
     background-position: center;
@@ -73,6 +73,7 @@ body{
 /* job list board */
 #seekersDashbord{
     display: none;
+    flex-direction: column;
     position: absolute;
     width: 100%;
 }
@@ -433,7 +434,48 @@ body{
 
 /* login */
 #loginPage{
-      
+   display: none;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;   
+}
+.loginInputField div{
+    display: flex;
+    flex-direction: column;
+    width: 100%;  
+}
+.loginInputField div input{
+    width: 120%;
+    height: 20px;
+    padding: 5px;
+    outline: none;
+    border: 1px solid black;
+    margin-top: 6px;
+    margin-bottom: 10px;
+    border-radius: 7px;
+}
+#formLogin{
+    padding: 5px 17px;
+    border: none;
+    margin-top: 20px;
+    background: red;
+    color: white;
+    border-radius: 10px;
+}
+#formLogin:hover{
+   background: orange;
+}
+.loginInputField div .success{
+    border: 2px solid green;
+    color: green;
+}
+.loginInputField div .error{
+    border: 1px solid red;
+    color: red;
+}
+.errorLoginMessage{
+    color: red;
+
 }
 @media(min-width:500px){
    .navigation{
