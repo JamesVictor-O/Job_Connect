@@ -22,6 +22,15 @@ class User{
         if (email === this.email && password === this.password) {
             jobSeekersHomePg.style.display = "flex"
             document.querySelector("#loginPage").style.display = "none"
+            let allArray = Array.from(logInBn)
+
+            allArray.map(elements => {
+                elements.innerHTML="Log out"
+            })
+            let allArray2 = Array.from(signUpBn)
+            allArray2.map(elements => {
+                elements.style.display="none"
+            })
             console.log(this)
         } else (
             document.querySelector(".errorLoginMessage").innerHTML="Invalid login informations!!"
