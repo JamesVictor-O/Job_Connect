@@ -21,7 +21,7 @@
                   </ul>
               </nav>
               <div class="btn1">
-                  <button class="login1">
+                  <button class="Login">
                       Log in
                   </button>
                   <button class="signup">
@@ -50,10 +50,10 @@
             
         </ul>
         <div class="mobileBtn">
-            <li><a href="#">Log In</a></li>
+            <li class="Login"><a href="#">Log In</a></li>
         </div>
         <div class="mobileBtn">
-            <li><a href="#">Sign Up</a></li>
+            <li class="signup"><a href="#">Sign Up</a></li>
         </div>
     </div>
 
@@ -65,7 +65,6 @@
             <div>
                 <label for="firstName">First Name</label>
                 <input type="text" id="firstname" placeholder="INPUT YOUR FIRST NAME">
-                <p class="errorMes">error</p>
             </div>
             <div>
                 <label for="firstName">Last Name</label>
@@ -95,7 +94,7 @@
                 </select>
             </div>
         </div>
-        <p>Already Have An Account ? <a href="#">Login</a></p>
+        <p>Already Have An Account ? <a class="Login" href="#">Login</a></p>
         <div id="signup2">
             <button id="formSignUp">
                 Sign Up
@@ -104,16 +103,33 @@
     </section>
 
     <!-- login page -->
-    <section> </section>
+    <section id="loginPage"> 
+           <h2>LOGIN</h2>
+        <div class="loginInputField">
+            <div>
+                <label for="email">Email</label>
+                <input type="email" id="loginEmail" placeholder="INPUT YOUR Email">
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input type="email" id="loginPassword" placeholder="INPUT YOUR PASSWORD">
+            </div>
+        </div>
+        <span class="errorLoginMessage"></span>
+        <div>
+            <button id="formLogin">Login</button>
+        </div>
+    </section>
 
      <!-- homepage -->
     <section class="homepage">
         <div class="welcomeBanner">
            <h2>A Meeting Point Between Job Givers And Job Seekers</h2>
            <p>The remote job board you have been searching for</p>
-           <button id="signup">
+           <button class="signup">
               Sign Up
            </button>
+           <p class="ownAccount">Has an account already? <a  class="Login" href="#">Login</a></p>
         </div>
         <div class="banner">
             <img src="./assets/happy-young.png" alt="">
@@ -547,6 +563,6 @@
     </div>
     </section>
    </main>
- <script type="module" src="index.js"></script>   
+<script type="module" src="index.js"></script>   
 </body>
 </html>
