@@ -1,6 +1,7 @@
 const signUpPagePg = document.querySelector("#signUpPage");
 const homePagePg = document.querySelector(".homepage");
 const logInPg = document.querySelector("#loginPage");
+const loginBtn=document.querySelector(".formLogin")
 
 // sign up and login page
 
@@ -97,6 +98,10 @@ function LoginForm(button) {
        formNavigation(buttons)
     })
 }
+
+
+// login
+
 
 
 export {signUpForm,LoginForm}

@@ -5,6 +5,7 @@ body{
    font-family: sans-serif;
    margin: 3px;
    padding: 0;
+   overflow: auto;
 }
 .header{
     display: flex;
@@ -33,7 +34,7 @@ body{
 }
 .homepage{
     display: flex;
-    position: absolute;
+    position: fixed;
     
     height: 100vh;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)),url("assets/happy-young.png");;
@@ -73,6 +74,7 @@ body{
 /* job list board */
 #seekersDashbord{
     display: none;
+    flex-direction: column;
     position: absolute;
     width: 100%;
 }
@@ -471,6 +473,10 @@ body{
 .loginInputField div .error{
     border: 1px solid red;
     color: red;
+}
+.errorLoginMessage{
+    color: red;
+
 }
 @media(min-width:500px){
    .navigation{
