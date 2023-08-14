@@ -8,11 +8,40 @@ const inputPhoneNumber=document.querySelector("#phoneNo")
 const inputPassword=document.querySelector("#password")
 const inputConfirmPassword=document.querySelector("#confirmPassword")
 const inputIdentity=document.querySelector("#idntity")
+// imported functions
 
-let myInformation = {
-    
+
+export class User{
+    constructor(firstName,lastName,email,password,identity,phoneNumber) {
+        this.firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.identity = identity;
+        this.phoneNumber = phoneNumber;
+    }
+    Login(email,password) {
+        if (email === this.email && password === this.password) {
+            jobSeekersHomePg.style.display = "flex"
+            document.querySelector("#loginPage").style.display = "none"
+            let allArray = Array.from(logInBn)
+
+            allArray.map(elements => {
+                elements.innerHTML="Log out"
+            })
+            let allArray2 = Array.from(signUpBn)
+            allArray2.map(elements => {
+                elements.style.display="none"
+            })
+            console.log(this)
+        } else (
+            document.querySelector(".errorLoginMessage").innerHTML="Invalid login informations!!"
+        )
+    }
 }
-
+ 
+const allUsers=[]
+let dataStorage=localStorage.setItem("dataBase", JSON.stringify(allUsers));
 // sign up and login page
 
 function signUpForm(button) {
@@ -90,7 +119,7 @@ function formValidation() {
     })
 }
 formValidation()
-
+   
 function confirmation() {
     const allInputs = document.querySelectorAll(".inputField input");
 
@@ -103,14 +132,27 @@ function confirmation() {
         }
     }
     if (allChecked) {
-        myInformation.firstName = inputFirstName.value;
-        myInformation.secondName = inputLastName.value;
-        myInformation.email = inputEmail.value;
-        myInformation.phoneNumber = inputPhoneNumber.value;
-        myInformation.passWord = inputPassword.value;
-        myInformation.identity = inputIdentity.value;
-        
-        console.log(myInformation)
+        let firstName = inputFirstName.value;
+        let secondName = inputLastName.value;
+        let email = inputEmail.value;
+        let phoneNumber = inputPhoneNumber.value;
+        let passWord = inputPassword.value;
+        let identity = inputIdentity.value; 
+
+        let dataBase = JSON.parse(localStorage.getItem("dataBase"))
+
+        if (dataBase.length == 0) {
+            allUsers.push(new User(firstName, secondName, email, passWord,
+            ))
+            localStorage.setItem("dataBase", JSON.stringify(allUsers));
+            dataBase = JSON.parse(localStorage.getItem("dataBase"))
+        } else if(dataBase.length >= 0) {
+            console.log("okay")
+            // dataBase.map(elements => {
+            //     console.log(elements)
+            // })
+        }
+        console.log(dataBase)
     } else {
         console.log("not good to go")
     }
@@ -131,8 +173,10 @@ function LoginForm(button) {
 }
 
 
+
+
 // login
 
-
+console.log(JSON.parse(localStorage.getItem("dataBase")))
 
 export {signUpForm,LoginForm}
