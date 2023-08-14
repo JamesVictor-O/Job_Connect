@@ -7,8 +7,10 @@ const inputEmail=document.querySelector("#email")
 const inputPhoneNumber=document.querySelector("#phoneNo")
 const inputPassword=document.querySelector("#password")
 const inputConfirmPassword=document.querySelector("#confirmPassword")
-const inputIdentity=document.querySelector("#idntity")
+const inputIdentity = document.querySelector("#idntity")
+const loginBtn=document.querySelector("#formLogin")
 // imported functions
+
 
 
 export class User{
@@ -38,12 +40,17 @@ export class User{
             document.querySelector(".errorLoginMessage").innerHTML="Invalid login informations!!"
         )
     }
-}
- 
-const allUsers=[]
-let dataStorage=localStorage.setItem("dataBase", JSON.stringify(allUsers));
-// sign up and login page
 
+    introduction() {
+        console.log(`my name is ${this.firstName} ${this.lastName}`)
+    }
+}
+const allUsers =JSON.parse(localStorage.getItem("dataBase")) || [];
+console.log(allUsers)
+
+
+
+// sign up and login page
 function signUpForm(button) {
     let arrayOfLogin = Array.from(button)
     arrayOfLogin.map(buttons => {
@@ -104,10 +111,33 @@ function validating(input) {
     }
     
 }
+
+// adding new users to database
+
+const addUser = function (firstName, lastName, email, passWord, identity, phoneNumber) {
+    allUsers.map(elements => {
+        if (elements.email === email) {
+            console.log("you already have an account with us")
+        } else {
+            allUsers.push(firstName= new User(firstName,
+                lastName,
+                email,
+                passWord,
+                identity,
+                phoneNumber))
+            localStorage.setItem("dataBase", JSON.stringify(allUsers))
+        }
+    })
+    console.log(allUsers)
+}
+
+
 // form validation
 function formValidation() { 
     const signUpBotton = document.querySelector("#formSignUp");
-    signUpBotton.addEventListener("click", () => {
+    signUpBotton.addEventListener("click", (e) => {
+        e.preventDefault();
+
         validating(inputFirstName)
         validating(inputLastName)
         validating(inputEmail)
@@ -138,23 +168,8 @@ function confirmation() {
         let phoneNumber = inputPhoneNumber.value;
         let passWord = inputPassword.value;
         let identity = inputIdentity.value; 
-
-        let dataBase = JSON.parse(localStorage.getItem("dataBase"))
-
-        if (dataBase.length == 0) {
-            allUsers.push(new User(firstName, secondName, email, passWord,
-            ))
-            localStorage.setItem("dataBase", JSON.stringify(allUsers));
-            dataBase = JSON.parse(localStorage.getItem("dataBase"))
-        } else if(dataBase.length >= 0) {
-            console.log("okay")
-            // dataBase.map(elements => {
-            //     console.log(elements)
-            // })
-        }
-        console.log(dataBase)
-    } else {
-        console.log("not good to go")
+        addUser(firstName, secondName, email, passWord, identity, phoneNumber)
+        
     }
     
 }
@@ -172,11 +187,15 @@ function LoginForm(button) {
     })
 }
 
-
-
-
-// login
-
-console.log(JSON.parse(localStorage.getItem("dataBase")))
+loginBtn.addEventListener("click", () => {
+    let email = document.querySelector("#loginEmail").value
+    let password = document.querySelector("#loginPassword").value;
+    allUsers.map(elements => {
+        if (elements.email === email) {
+            elements.introduction()
+        } 
+    }) 
+    // James.Login(email,password)
+})
 
 export {signUpForm,LoginForm}
