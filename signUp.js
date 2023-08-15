@@ -8,22 +8,28 @@ const inputPhoneNumber=document.querySelector("#phoneNo")
 const inputPassword=document.querySelector("#password")
 const inputConfirmPassword=document.querySelector("#confirmPassword")
 const inputIdentity = document.querySelector("#idntity")
-const loginBtn=document.querySelector("#formLogin")
+const loginBtn = document.querySelector("#formLogin")
+const logInBn = document.querySelectorAll(".Login")
+let signUpBn = document.querySelectorAll(".signup")
+
+// pages
+const jobSeekersHomePg = document.querySelector("#seekersDashbord")
+
 // imported functions
 
 
 
 export class User{
     constructor(firstName,lastName,email,password,identity,phoneNumber) {
-        this.firstName;
+        this.firstName=firstName
         this.lastName = lastName;
         this.email = email;
         this.password = password;
         this.identity = identity;
         this.phoneNumber = phoneNumber;
     }
-    Login(email,password) {
-        if (email === this.email && password === this.password) {
+    Login(inputmail,inputpassword) {
+        if (inputmail === this.email && inputpassword === this.password) {
             jobSeekersHomePg.style.display = "flex"
             document.querySelector("#loginPage").style.display = "none"
             let allArray = Array.from(logInBn)
@@ -118,13 +124,15 @@ const addUser = function (firstName, lastName, email, passWord, identity, phoneN
     allUsers.map(elements => {
         if (elements.email === email) {
             console.log("you already have an account with us")
-        } else {
-            allUsers.push(firstName= new User(firstName,
+        }else if(elements.email !== email) {
+            allUsers.push({
+                firstName,
                 lastName,
                 email,
                 passWord,
                 identity,
-                phoneNumber))
+                phoneNumber
+            })
             localStorage.setItem("dataBase", JSON.stringify(allUsers))
         }
     })
@@ -168,8 +176,7 @@ function confirmation() {
         let phoneNumber = inputPhoneNumber.value;
         let passWord = inputPassword.value;
         let identity = inputIdentity.value; 
-        addUser(firstName, secondName, email, passWord, identity, phoneNumber)
-        
+        addUser(firstName, secondName, email, passWord, identity, phoneNumber)   
     }
     
 }
@@ -188,14 +195,20 @@ function LoginForm(button) {
 }
 
 loginBtn.addEventListener("click", () => {
-    let email = document.querySelector("#loginEmail").value
-    let password = document.querySelector("#loginPassword").value;
+    let inputEmail = document.querySelector("#loginEmail").value
+    let inputPassword = document.querySelector("#loginPassword").value;
     allUsers.map(elements => {
-        if (elements.email === email) {
-            elements.introduction()
+        if (elements.email === inputEmail) {
+            
+            let {firstName,lastName,email,passWord,identity,phoneNumber}=elements
+            let user = new User(firstName, lastName,email, passWord, identity, phoneNumber);
+            
+            user.Login(inputEmail, inputPassword)
+            console.log("working fine")
         } 
     }) 
-    // James.Login(email,password)
+    
+    
 })
 
 export {signUpForm,LoginForm}

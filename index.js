@@ -6,8 +6,7 @@ const logInBn = document.querySelectorAll(".Login")
 // imported modules
 import { signUpForm, LoginForm,User} from "./signUp.js";
 
-// pages
-const jobSeekersHomePg=document.querySelector("#seekersDashbord")
+
 
 // const James=new User("james","ochula","victorjames408@gmail.com", "123456","Artist")
 
