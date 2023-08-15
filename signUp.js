@@ -27,9 +27,12 @@ export class User{
         this.password = password;
         this.identity = identity;
         this.phoneNumber = phoneNumber;
+        this.IsLogedin=false
     }
     Login(inputmail,inputpassword) {
         if (inputmail === this.email && inputpassword === this.password) {
+
+            this.IsLogedin = true;
             jobSeekersHomePg.style.display = "flex"
             document.querySelector("#loginPage").style.display = "none"
             let allArray = Array.from(logInBn)
@@ -41,7 +44,19 @@ export class User{
             allArray2.map(elements => {
                 elements.style.display="none"
             })
-            console.log(this)
+            if (this.IsLogedin) {
+                let bars = document.querySelectorAll(".logedIn");
+                let beforBars = document.querySelectorAll(".beforLogedIn");
+                let bBars=Array.from(beforBars)
+                let logedInBars = Array.from(bars)
+                logedInBars.map(elements => {
+                    elements.style.display="block"
+                })
+                bBars.map(elements => {
+                    elements.style.display="none"
+                })
+
+            }
         } else (
             document.querySelector(".errorLoginMessage").innerHTML="Invalid login informations!!"
         )
@@ -52,7 +67,6 @@ export class User{
     }
 }
 const allUsers =JSON.parse(localStorage.getItem("dataBase")) || [];
-console.log(allUsers)
 
 
 
