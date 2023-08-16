@@ -42,7 +42,7 @@
 
    
    <main>
-    <div class="mobilemenu">
+    <div class="mobilemenu allPages">
         <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">Profile</a></li>
@@ -59,7 +59,7 @@
     </div>
 
     <!-- signup page -->
-    <section id="signUpPage">
+    <section id="signUpPage allPages">
         <h2>Sign Up</h2>
 
         <div class="inputField">
@@ -104,7 +104,7 @@
     </section>
 
     <!-- login page -->
-    <section id="loginPage"> 
+    <section id="loginPage allPages"> 
            <h2>LOGIN</h2>
         <div class="loginInputField">
             <div>
@@ -123,25 +123,79 @@
     </section>
 
     <!-- profile page -->
-    <section id="profile">
+    <section id="profile allPages">
         <div class="profileHeader">
-            <div class="profilePicture">
-                <div class="image">
-                  <img src="./assets/5dde415c1a4cc.png" alt="">
+            <div class="onlyMobile">
+                <div class="profilePicture">
+                    <div class="image">
+                      <img src="./assets/5dde415c1a4cc.png" alt="">
+                    </div>
+                    <div class="profileName">
+                        <h1>James Victor</h1>
+                        <span class="profileSetting">
+                            <button>➕</button>
+                            <span>Add Bio</span>
+                        </span>
+                    </div>
                 </div>
-                <div class="profileName">
-                    <h1>James Victor</h1>
-                    <span class="profileSetting">
-                        <button>➕</button>
-                        <span>Add Bio</span>
-                    </span>
+                <div class="profileNavigation">
+                    <ul>
+                        <li>Profile</li>
+                        <li>Settings</li>
+                        <li>Support</li>
+                    </ul>
                 </div>
+            </div>
+            <div class="onlyWeb">
+                  <div>
+                    <input type="checkbox"><span>Active</span><span class="Active">.</span>
+                  </div>
+                  <div>
+                    <button>Edit profile</button>
+                  </div>
+            </div>
+        </div>
+        <div class="profileBody">
+            <div class="vitalInfomations">
+                <div class="informations">
+                    <div>Salary expectations</div>
+                    <span>$1200</span>
+                </div>
+                <div class="informations">
+                    <div>Job type</div>
+                    <span>Remote</span>
+                </div>
+                <div class="informations">
+                    <div>Experience</div>
+                    <span>5 years of experience</span>
+                </div>
+                <div class="informations">
+                    <div>Location</div>
+                    <span>United States</span>
+                </div>
+                <div class="informations">
+                    <div>Email</div>
+                    <span>victorjames408@gmail.com</span>
+                </div>
+                <div class="informations">
+                    <div>Social Media</div>
+                    <span></span>
+                </div>
+                <div class="informations">
+                    <div>Portfolio</div>
+                    <span>Portfolio-aw.com</span>
+                </div>
+            </div>
+            <div class="about">
+                <h2>About Me</h2>
+                <p>My name is James victor, with about five years of learning and working experience with companies of high standard and morals, am quite proficient with Html,CSS,Javascript and react js</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe consequuntur facilis quo consectetur nulla adipisci, necessitatibus, excepturi qui molestias modi quos voluptatum aspernatur eaque dolor ipsam ad illum earum rerum?</p>
             </div>
         </div>
     </section>
 
      <!-- homepage -->
-    <section class="homepage">
+    <section class="homepage allPages" id="homepage">
         <div class="welcomeBanner">
            <h2>A Meeting Point Between Job Givers And Job Seekers</h2>
            <p>The remote job board you have been searching for</p>
@@ -156,7 +210,7 @@
     </section>
       
     <!-- jobSeekersDashbord -->
-    <section id="seekersDashbord">
+    <section id="seekersDashbord allPages">
        <div class="headSection">
           <div class="head">
             <h2>Search For New Job Opportunities</h2>
@@ -289,7 +343,7 @@
     
     <!-- proposal -->
 
-    <section id="proposal">
+    <section id="proposal allPages">
         <div class="proposalHeader">
             <h2>Proposal</h2>
             <div class="proposalNavigation">
@@ -447,7 +501,7 @@
     </section>
 
     <!-- jobGiversDashBoard -->
-    <section class="jobGiversBoard">
+    <section class="jobGiversBoard allPages" id="jobGiversBoard">
         <div class="headSection">
             <div class="head">
               <h2>Discover Qualified Talents to Work With.</h2>
