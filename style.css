@@ -29,6 +29,12 @@ body{
 .navigation{
     display: none;
 }
+.logedIn{
+    display: none;
+}
+
+
+
 /* homePage */
 .banner{
     display: none;
@@ -208,6 +214,8 @@ body{
     display: none;
 }
 
+
+
 /* job proposals */
 #proposal{
     display: none;
@@ -247,6 +255,8 @@ body{
     color: black;
 
 }
+
+
 /* recived */
 .received{
     display: none;
@@ -266,6 +276,8 @@ body{
     margin-bottom: 10px;
     border-radius: 20px;
 }
+
+
 
 /* jobGiver DashBoard */
 .jobGiversBoard{
@@ -317,6 +329,9 @@ body{
 .humbuger.humbuger.is-active .bar{
     opacity: 0;
 }
+
+
+
 /* mobile navigation */
 .mobilemenu{
     position: absolute;
