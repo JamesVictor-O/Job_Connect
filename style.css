@@ -29,6 +29,12 @@ body{
 .navigation{
     display: none;
 }
+.logedIn{
+    display: none;
+}
+
+
+
 /* homePage */
 .banner{
     display: none;
@@ -207,6 +213,7 @@ body{
 .searchBored{
     display: none;
 }
+
 
 
 /* job proposals */
